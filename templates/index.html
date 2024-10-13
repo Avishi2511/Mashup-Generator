@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Mashup Creator</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .container { max-width: 800px; margin: 50px auto; padding: 40px; border: 1px solid #ccc;}
+        h2 { text-align: center; }
+        label { display: block; margin-top: 10px; }
+        input, button { width: 100%; padding: 10px; margin-top: 5px; }
+        button { background-color: blue; color: white; border: none; cursor: pointer; }
+        button:hover { background-color: blue; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Mashup Generator</h2>
+        <form action="/create-mashup" method="post">
+            <label for="singer_name">Singer Name:</label>
+            <input type="text" id="singer_name" name="singer_name" required>
+
+            <label for="n_videos">Number of Videos (minimum 10):</label>
+            <input type="number" id="n_videos" name="n_videos" min="10" required>
+
+            <label for="duration">Trim Duration in Seconds (minimum 20):</label>
+            <input type="number" id="duration" name="duration" min="20" required>
+
+            <label for="output_file">Output File Name (e.g., output.wav):</label>
+            <input type="text" id="output_file" name="output_file" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <button type="submit">Generate</button>
+        </form>
+    </div>
+</body>
+</html>
